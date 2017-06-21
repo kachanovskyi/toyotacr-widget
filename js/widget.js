@@ -199,7 +199,7 @@
                                         .on("click", chatInit)
                                 )
                         )
-                } else {
+                } else if($($('.message-container')[0]).children().length < 2) {
                     chatInit();
                 }
 
@@ -326,7 +326,7 @@
                 url: './data/response.json',
                 contentType: "application/json; charset=utf-8",
                 dataType: "json",
-                data: data,
+                data: JSON.stringify(data),
 
                 success: function (data) {
                     sessionStorage.setItem("toyotaCRchatID", data.chatId.id);
@@ -377,7 +377,7 @@
                     // headers: {
                     //     "Authorization": "Bearer " + accessToken
                     // },
-                    data: data,
+                    data: JSON.stringify(data),
 
                     success: function (data) {
                         setResponse(data);
