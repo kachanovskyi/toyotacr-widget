@@ -2,8 +2,8 @@
     //Load Stylesheet
     var root = './';
     // var root = 'https://rawgit.com/chatbotstudios/anychat.pro/master/';
-    var accessToken = "afc2e32efdff44819a7cbc62e58009ca";
-    var baseUrl = "https://api.api.ai/v1/";
+    // var accessToken = "afc2e32efdff44819a7cbc62e58009ca";
+    // var baseUrl = "https://api.api.ai/v1/";
 
     var head = document.getElementsByTagName('head')[0];
 
@@ -47,10 +47,11 @@
     function init() {
         var $ = window.jQuery;
 
-        var settings = {},
-            script = $('#anychat-script');
+        var chatId = sessionStorage.getItem("toyotaCRchatID");
+            // settings = {},
+            // script = $('#anychat-script');
 
-        settings.overlay = script.data('overlay');
+        // settings.overlay = script.data('overlay');
 
         var anchor = $('<div>')
             .attr('id', 'anychat-container')
@@ -80,11 +81,14 @@
 
 
         //Add overlay
-        if (settings.overlay && !Mobile) {
+        // if (settings.overlay && !Mobile) {
+
+            // alert(1);
 
 
+        // } else {
 
-        } else {
+            // alert(2);
 
             var $w = $(window);
 
@@ -100,19 +104,19 @@
             launcherCont.height = 20;
 
             if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
-                chatbot.find('.group-title.anychat-chatbot').css('z-index', '-1');
-                chatTop = $w.height() - chatIconHeight;
-                iconHeight = Math.floor(($w.height() - chatIconHeight - (chatIconHeight - iconHeight)) / (numberOfApps));
+                // chatbot.find('.group-title.anychat-chatbot').css('z-index', '-1');
+                chatTop = $w.height();
+                // iconHeight = Math.floor(($w.height() - chatIconHeight - (chatIconHeight - iconHeight)) / (numberOfApps));
 
-                if (iconHeight > 70) {
-                    iconHeight = 70;
-                }
+                // if (iconHeight > 70) {
+                //     iconHeight = 70;
+                // }
 
                 chatWidth = $w.width();
                 launcherCont.width = chatWidth - 2 * launcherCont.right;
-                $('.anychat-chat-icon').css('right', launcherCont.right).css('width', launcherCont.width).css('height', iconHeight);
+                // $('.anychat-chat-icon').css('right', launcherCont.right).css('width', launcherCont.width).css('height', iconHeight);
 
-                $('.anychat-chat-icon img').css('height', iconHeight).css('width', iconHeight);
+                // $('.anychat-chat-icon img').css('height', iconHeight).css('width', iconHeight);
             } else {
 
             }
@@ -156,7 +160,7 @@
                                         .addClass('black-placeholder')
                                         .css('padding', '0 0.75em')
                                         .keypress(function (event) {
-                                            if (event.which == 13) {
+                                            if (event.which === 13) {
                                                 event.preventDefault();
                                                 send();
                                             }
@@ -177,17 +181,33 @@
                         .css('visibility', 'hidden')
                         .css('margin-bottom', '0')
                         .append(
-                            $('<div class="chat-message bot purple">').text("remember, you can always go back to the main screen to chat with a human")
+                            $('<div class="chat-message bot purple">').text("I'm hidden:)")
                         )
                         .prependTo($('#chat-window').find('.message-container'));
-                    botWrote = true;
+                    // botWrote = true;
                 }
 
+                if(sessionStorage.getItem("toyotaCRchatID") === null) {
+                    messageContainer
+                        .append(
+                            $('<div class="start-screen">')
+                                .append(
+                                    $('<div class="start-text">').text("Hola, Soy el ToyotaBot. Si tiene alguna duda, estoy aquí para ayudarle!")
+                                )
+                                .append(
+                                    $('<a class="start-btn">').text("Iniciar Chat")
+                                        .on("click", chatInit)
+                                )
+                        )
+                } else {
+                    chatInit();
+                }
 
                 // launcher.toggleClass('anychat-launcher-active');
                 chatWindowShow();
+
             });
-        }
+        // }
 
 
 
@@ -206,37 +226,38 @@
             $('.chat-close').hide();
         }
 
-        function chatToggle() {
-            if (chatShow) {
-                chatShow = false;
-                chatWindowClose(function () {
-                    anychatIcon.animate({
-                        bottom: anychatIconBottom
-                    }, 150)
-                });
-            } else {
-                chatShow = true;
-                anychatIconBottom = parseInt(anychatIcon.css('bottom'), 10);
-
-                anychatIcon.animate({
-                    bottom: chatTop
-                }, 150, chatWindowShow);
-            }
-        }
+        // function chatToggle() {
+        //     if (chatShow) {
+        //         chatShow = false;
+        //         chatWindowClose(function () {
+        //             anychatIcon.animate({
+        //                 bottom: anychatIconBottom
+        //             }, 150)
+        //         });
+        //     } else {
+        //         chatShow = true;
+        //         anychatIconBottom = parseInt(anychatIcon.css('bottom'), 10);
+        //
+        //         // anychatIcon.animate({
+        //         //     bottom: chatTop
+        //         // }, 150, chatWindowShow);
+        //     }
+        // }
 
 
         function setResponse(val) {
             // var response = JSON.parse(val);
             // var response = "some value";
 
+
+            if( sessionStorage.getItem("toyotaCRchatID") === null ) {
+                sessionStorage.setItem("toyotaCRchatID", val.chatId.id);
+            }
+
             var container = $('<div class="message-outer bot">');
             var message = $('<div class="chat-message bot">');
 
             var counter = 1;
-
-            val.messages.forEach(function (entry) {
-                console.log(entry.text === null);
-            });
 
 
             if ( val.messages !== null ) {
@@ -261,11 +282,7 @@
 
                     if ( (counter === val.messages.length) && (val.buttons !== null) ) {
 
-                        console.log('NOW COMING BUTTONS');
-
                         val.buttons.forEach(function (entry) {
-
-                            console.log(entry.title + ": " + entry.payload);
 
                             container
                                 .append(
@@ -274,7 +291,6 @@
                                         .attr('payload', entry.payload)
                                         .click(function () {
                                             send("btn", $(this));
-                                            console.log('button clicked');
                                         })
                                 );
 
@@ -286,8 +302,6 @@
 
                 }, 999);
 
-
-
                 container.prependTo($('#chat-window').find('.message-container'));
 
             }
@@ -296,21 +310,57 @@
             chatScrollBottom();
         }
 
-        function send(param, elem) {
-            console.log(elem, param);
+        function chatInit() {
 
-            var data = {};
+            var data = {
+                chatId: {
+                    id: chatId
+                },
+                button: {
+                    payload: "GET_STARTED"
+                }
+            };
+
+            $.ajax({
+                type: "POST",
+                url: './data/response.json',
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                data: data,
+
+                success: function (data) {
+                    sessionStorage.setItem("toyotaCRchatID", data.chatId.id);
+                    setResponse(data);
+
+                    $('.start-screen').fadeOut("fast");
+                },
+                error: function () {
+                    console.log("Internal Server Error. Not possible to get chat id.");
+                }
+            });
+
+            console.log(data);
+        }
+
+        function send(param, elem) {
 
             var text = $("#chatInput").val();
-            data.message = text;
-
+            var data = {
+                chatId: {
+                    id: chatId
+                }
+            };
 
             if (param === "btn") {
                 // text = elem.text().replace(" ", "_");
-                text = elem.attr('payload');
-
-                data = {};
-                data.payload = text;
+                text = elem.text();
+                data.button = {
+                    payload: elem.attr('payload')
+                }
+            } else {
+                data.message = {
+                    text: text
+                };
             }
 
             if (text.length && text !== " ") {
@@ -324,48 +374,38 @@
                     url: './data/response.json',
                     contentType: "application/json; charset=utf-8",
                     dataType: "json",
-                    headers: {
-                        "Authorization": "Bearer " + accessToken
-                    },
-                    data: JSON.stringify(data),
+                    // headers: {
+                    //     "Authorization": "Bearer " + accessToken
+                    // },
+                    data: data,
 
                     success: function (data) {
                         setResponse(data);
-                        // setResponse(JSON.stringify(data, undefined, 2));
-                        // console.log(data);
                     },
                     error: function () {
-                        setResponse("Internal Server Error");
+                        console.log("Internal Server Error");
                     }
                 });
 
                 var message = $('<div class="chat-message user">');
 
-                if (botWrote) {
+                // if (botWrote) {
                     $('<div class="message-outer user">')
                         .prependTo($('#chat-window')
                             .find('.message-container'));
-                }
+                // }
 
                 message
                     .text(text)
-                    // .append($('<p class="hour">').text(formatAMPM(new Date())))
                     .appendTo(
                         $('#chat-window').find('.message-container').find('.message-outer.user')[0]
                     );
-                if (message.width() < 55 + 15) {
-                    message.find('.hour').css('margin-right', 55);
-                } else {
-                    message.find('.hour').css('margin-right', message.width() - 14);
-                }
 
-                chatScrollBottom();
+                // chatScrollBottom();
             } else {
                 $("#chatInput").val('').focus();
             }
             chatScrollBottom();
-
-            var chatTop = $('#chat-window').find('.chat-top');
 
         }
 
@@ -373,10 +413,6 @@
             $(".message-container").animate({scrollTop: $('.message-container').prop("scrollHeight")}, 0);
         }
 
-
-        if ($(window).width() > 980) {
-            $('.preview').css('display', 'none');
-        }
         window.initializeShopchat = init;
         return true;
     }
