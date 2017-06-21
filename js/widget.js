@@ -1,7 +1,7 @@
 (function () {
     //Load Stylesheet
-    // var root = './';
-    var root = 'https://rawgit.com/kachanovskyi/toyotacr-widget/master/';
+    var root = './';
+    // var root = 'https://rawgit.com/kachanovskyi/toyotacr-widget/master/';
     // var accessToken = "afc2e32efdff44819a7cbc62e58009ca";
     // var baseUrl = "https://api.api.ai/v1/";
 

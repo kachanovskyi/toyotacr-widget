@@ -18,11 +18,11 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="widget.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="widget.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/js/widget.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="45">
-              <caret line="3" column="35" lean-forward="false" selection-start-line="3" selection-start-column="16" selection-end-line="3" selection-end-column="35" />
+            <state relative-caret-position="75">
+              <caret line="5" column="46" lean-forward="true" selection-start-line="5" selection-start-column="46" selection-end-line="5" selection-end-column="46" />
               <folding />
             </state>
           </provider>
@@ -38,7 +38,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="150">
@@ -117,8 +117,8 @@
         <option value="$PROJECT_DIR$/test.js" />
         <option value="$PROJECT_DIR$/data/response.json" />
         <option value="$PROJECT_DIR$/css/widget.css" />
-        <option value="$PROJECT_DIR$/js/widget.js" />
         <option value="$PROJECT_DIR$/index.html" />
+        <option value="$PROJECT_DIR$/js/widget.js" />
       </list>
     </option>
   </component>
@@ -280,12 +280,12 @@
       <workItem from="1497605225313" duration="9289000" />
       <workItem from="1497783296302" duration="7000" />
       <workItem from="1497862399361" duration="13678000" />
-      <workItem from="1497938727050" duration="23948000" />
+      <workItem from="1497938727050" duration="24075000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="46922000" />
+    <option name="totallyTimeSpent" value="47049000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -447,18 +447,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/widget.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="35" lean-forward="false" selection-start-line="3" selection-start-column="16" selection-end-line="3" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
           <caret line="10" column="7" lean-forward="true" selection-start-line="10" selection-start-column="7" selection-end-line="10" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/widget.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="46" lean-forward="true" selection-start-line="5" selection-start-column="46" selection-end-line="5" selection-end-column="46" />
           <folding />
         </state>
       </provider>
