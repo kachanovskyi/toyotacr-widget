@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="281a4441-5d9a-4bb6-b8d2-820334c792cf" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/widget.css" afterPath="$PROJECT_DIR$/css/widget.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/widget.js" afterPath="$PROJECT_DIR$/js/widget.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -17,21 +18,21 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="widget.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="widget.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/widget.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="448">
-              <caret line="203" column="17" lean-forward="true" selection-start-line="201" selection-start-column="16" selection-end-line="203" selection-end-column="17" />
+            <state relative-caret-position="393">
+              <caret line="63" column="29" lean-forward="false" selection-start-line="63" selection-start-column="29" selection-end-line="63" selection-end-column="29" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="widget.css" pinned="false" current-in-tab="false">
+      <file leaf-file-name="widget.css" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/css/widget.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="469" column="1" lean-forward="true" selection-start-line="469" selection-start-column="1" selection-end-line="469" selection-end-column="1" />
+            <state relative-caret-position="140">
+              <caret line="407" column="1" lean-forward="false" selection-start-line="407" selection-start-column="1" selection-end-line="407" selection-end-column="1" />
               <folding />
             </state>
           </provider>
@@ -103,11 +104,17 @@
       <find>dat</find>
       <find>launcher.cl</find>
       <find />
+      <find>auncherCont.width</find>
       <find>$.ajax</find>
+      <find>#anychat-container</find>
+      <find>anychat</find>
+      <find>anychat-effect</find>
     </findStrings>
     <replaceStrings>
       <replace />
       <replace />
+      <replace>#widget-container</replace>
+      <replace>widget-effect</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -120,9 +127,9 @@
         <option value="$PROJECT_DIR$/js/test.js" />
         <option value="$PROJECT_DIR$/test.js" />
         <option value="$PROJECT_DIR$/data/response.json" />
-        <option value="$PROJECT_DIR$/css/widget.css" />
         <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/js/widget.js" />
+        <option value="$PROJECT_DIR$/css/widget.css" />
       </list>
     </option>
   </component>
@@ -298,12 +305,12 @@
       <workItem from="1497605225313" duration="9289000" />
       <workItem from="1497783296302" duration="7000" />
       <workItem from="1497862399361" duration="13678000" />
-      <workItem from="1497938727050" duration="25610000" />
+      <workItem from="1497938727050" duration="27942000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="48584000" />
+    <option name="totallyTimeSpent" value="50916000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -465,10 +472,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/css/widget.css">
+    <entry file="file://$PROJECT_DIR$/js/widget.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="469" column="1" lean-forward="true" selection-start-line="469" selection-start-column="1" selection-end-line="469" selection-end-column="1" />
+        <state relative-caret-position="393">
+          <caret line="63" column="29" lean-forward="false" selection-start-line="63" selection-start-column="29" selection-end-line="63" selection-end-column="29" />
           <folding />
         </state>
       </provider>
@@ -481,10 +488,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/widget.js">
+    <entry file="file://$PROJECT_DIR$/css/widget.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="448">
-          <caret line="203" column="17" lean-forward="true" selection-start-line="201" selection-start-column="16" selection-end-line="203" selection-end-column="17" />
+        <state relative-caret-position="140">
+          <caret line="407" column="1" lean-forward="false" selection-start-line="407" selection-start-column="1" selection-end-line="407" selection-end-column="1" />
           <folding />
         </state>
       </provider>
