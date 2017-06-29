@@ -229,24 +229,39 @@
     margin: 4px 12px;
     display: inline;
     clear: both;
-    max-width: 92%;
+    max-width: 77%;
     word-wrap: break-word;
     line-height: 100%;
     position: relative;
     border-radius: 12px;
 }
 
+#chat-window .message-container .message-row {
+    float: left;
+    clear: both;
+    width: 100%;
+}
+
 #chat-window .message-container .chat-message.bot {
     float: left;
     color: rgba(256, 256, 256, .9);
     background-color: #D0112B;
+    clear: none !important;
+}
+#chat-window .message-container .bot-icon {
+    display: inline-block;
+    width: 40px;
+    float: left;
+}
+#chat-window .message-container .bot-icon img {
+    width: 100%;
 }
 
 #chat-window .message-container .chat-message.button {
     font-weight: 400;
     font-size: 14px;
     padding: 12px 18px;
-    margin: 0 auto;
+    margin: 0 0 0 52px;
     display: block;
     clear: both;
     width: 92%;
@@ -258,6 +273,7 @@
     color: #db001e;
     text-align: center;
     border-radius: 0;
+    top: -4px;
 }
 #chat-window .message-container .chat-message.button:first-child {
     border-radius: 5px 5px 0 0;

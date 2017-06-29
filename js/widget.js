@@ -197,25 +197,50 @@
 
             if (val.messages !== null) {
 
+                var botImage = 'https://scontent.xx.fbcdn.net/v/t1.0-1/12036867_871948026214740_3114729672883288809_n.jpg?oh=a6def5588fff41c520613e9c4e2408c3&oe=59D76A1A';
+
                 container
                     .append(
-                        $('<div class="chat-message bot">').text(val.messages[0].text)
+                        $('<div class="message-row">')
+                            .prepend(
+                                $('<div class="bot-icon">')
+                                    .append(
+                                        $('<img/>').attr('src', botImage)
+                                    )
+                            )
+                            .append(
+                                $('<div class="chat-message bot">').text(val.messages[0].text)
+                            )
                     );
 
                 var printInterval = setInterval(function () {
 
+                    var btnWidth,
+                        message;
+
                     if ((counter < val.messages.length) && (val.messages[counter].text !== null)) {
 
-                        container
+                        message = $('<div class="chat-message bot">').text(val.messages[counter].text);
+
+                        $('<div class="message-row">')
+                            .prepend(
+                                $('<div class="bot-icon">')
+                                    .append(
+                                        $('<img/>').attr('src', botImage)
+                                    )
+                            )
                             .append(
-                                $('<div class="chat-message bot">').text(val.messages[counter].text)
-                            );
+                                message
+                            )
+                            .appendTo(container)
 
                         counter++;
-
+                        btnWidth = message.outerWidth();
                     }
 
                     if ((counter === val.messages.length) && (val.buttons !== null)) {
+
+                        message.css('border-radius', '12px 12px 0 0');
 
                         val.buttons.forEach(function (entry) {
 
@@ -224,6 +249,7 @@
                                     $('<div class="chat-message button">')
                                         .text(entry.title)
                                         .attr('payload', entry.payload)
+                                        .css('width', btnWidth)
                                         .click(function () {
                                             send("btn", $(this));
                                         })
@@ -264,7 +290,8 @@
                 data: JSON.stringify(data),
 
                 success: function (data) {
-                    sessionStorage.setItem("toyotaCRchatID", data.chatId.id);
+                    chatId = data.chatId.id;
+                    sessionStorage.setItem("toyotaCRchatID", chatId);
                     setResponse(data);
 
                     $('.start-screen').fadeOut("fast");
