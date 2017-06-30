@@ -121,7 +121,7 @@
                             .css('width', launcherCont.width)
                             .css('height', chatBottom)
                             .append(
-                                $('<input type="text" placeholder="type message">')
+                                $('<input type="text" placeholder="Escribir mensaje">')
                                     .attr('id', 'chatInput')
                                     .addClass('black-placeholder')
                                     .css('padding', '0 0.75em')
