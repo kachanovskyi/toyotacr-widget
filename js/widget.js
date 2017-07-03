@@ -19,6 +19,8 @@
     icons.href = 'https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/css/material-design-iconic-font.min.css';
     head.appendChild(icons);
 
+    var brandingLink = 'https://www.holaedna.com/edna-ai';
+
     setTimeout(function () {
         (window.jQuery && init()) || loadScript("https://code.jquery.com/jquery-3.1.1.min.js", init);
     }, 1000);
@@ -77,7 +79,7 @@
 
         var launcherCont = {};
         var chatTop = 548,
-            chatBottom = 44,
+            chatBottom = 58,
             chatWidth = 333;
         launcherCont.bottom = 3;
         launcherCont.right = 16;
@@ -121,22 +123,34 @@
                             .css('width', launcherCont.width)
                             .css('height', chatBottom)
                             .append(
-                                $('<input type="text" placeholder="Escribir mensaje">')
-                                    .attr('id', 'chatInput')
-                                    .addClass('black-placeholder')
-                                    .css('padding', '0 0.75em')
-                                    .keypress(function (event) {
-                                        if (event.which === 13) {
-                                            event.preventDefault();
-                                            send();
-                                        }
-                                    })
+                                $('<div class="input-container">')
+                                    .append(
+                                        $('<input type="text" placeholder="Escribir mensaje">')
+                                            .attr('id', 'chatInput')
+                                            .addClass('black-placeholder')
+                                            .keypress(function (event) {
+                                                if (event.which === 13) {
+                                                    event.preventDefault();
+                                                    send();
+                                                }
+                                            })
+                                    )
+                                    .append(
+                                        $('<a class="send-message">').append('<i class="zmdi zmdi-mail-send"></i>')
+                                            .css('float', 'right')
+                                            .css('border-bottom', 'none')
+                                            .click(send)
+                                    )
                             )
                             .append(
-                                $('<a class="send-message">').append('<i class="zmdi zmdi-mail-send"></i>')
-                                    .css('float', 'right')
-                                    .css('border-bottom', 'none')
-                                    .click(send)
+                                $('<p class="branding">')
+                                    .text('Powered by ')
+                                    .append(
+                                        $('<a class="powered-link">')
+                                            .attr('href', brandingLink)
+                                            .attr('target', '_blank')
+                                            .text('Edna')
+                                    )
                             )
                     )
                     .appendTo(chatbot);
@@ -198,7 +212,7 @@
             if (val.messages !== null) {
 
                 var botImage = 'https://scontent.xx.fbcdn.net/v/t1.0-1/12036867_871948026214740_3114729672883288809_n.jpg?oh=a6def5588fff41c520613e9c4e2408c3&oe=59D76A1A';
-
+                var message = $('<div class="chat-message bot">').text(val.messages[0].text);
                 container
                     .append(
                         $('<div class="message-row">')
@@ -209,14 +223,13 @@
                                     )
                             )
                             .append(
-                                $('<div class="chat-message bot">').text(val.messages[0].text)
+                                message
                             )
                     );
 
                 var printInterval = setInterval(function () {
 
-                    var btnWidth,
-                        message;
+                    var btnWidth;
 
                     if ((counter < val.messages.length) && (val.messages[counter].text !== null)) {
 
