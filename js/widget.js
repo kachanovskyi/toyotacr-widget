@@ -78,8 +78,8 @@
         var $w = $(window);
 
         var launcherCont = {};
-        var chatTop = 548,
-            chatBottom = 58,
+        var chatTop = 440,
+            chatBottom = 50,
             chatWidth = 333;
         launcherCont.bottom = 3;
         launcherCont.right = 16;
@@ -104,7 +104,7 @@
             if ($('#chat-window').length === 0) {
                 var chatWindow = $('<div id="chat-window">')
                     .css('height', chatHeight)
-                    .css('top', -chatHeight)
+                    .css('top', -chatHeight - 16)
                     .css('width', launcherCont.width)
                     .css('position', 'absolute')
                     .css('right', launcherCont.right)
@@ -114,6 +114,16 @@
                     .append(
                         $('<div class="chat-top">')
                             .css('bottom', chatHeight - chatBottom)
+                            .append(
+                                $('<p class="branding">')
+                                    .text('Powered by ')
+                                    .append(
+                                        $('<a class="powered-link">')
+                                            .attr('href', brandingLink)
+                                            .attr('target', '_blank')
+                                            .text('Edna')
+                                    )
+                            )
                             .append(
                                 $('<div class="close-btn">')
                             )
@@ -125,7 +135,7 @@
                             .append(
                                 $('<div class="input-container">')
                                     .append(
-                                        $('<input type="text" placeholder="Escribir mensaje">')
+                                        $('<input type="text" placeholder="Escribir mensaje ...">')
                                             .attr('id', 'chatInput')
                                             .addClass('black-placeholder')
                                             .keypress(function (event) {
@@ -134,22 +144,13 @@
                                                     send();
                                                 }
                                             })
+                                            .css('width', 'calc(100% - 80px)')
                                     )
                                     .append(
-                                        $('<a class="send-message">').append('<i class="zmdi zmdi-mail-send"></i>')
+                                        $('<a class="send-message">').text('Enviar')
                                             .css('float', 'right')
                                             .css('border-bottom', 'none')
                                             .click(send)
-                                    )
-                            )
-                            .append(
-                                $('<p class="branding">')
-                                    .text('Powered by ')
-                                    .append(
-                                        $('<a class="powered-link">')
-                                            .attr('href', brandingLink)
-                                            .attr('target', '_blank')
-                                            .text('Edna')
                                     )
                             )
                     )
@@ -171,7 +172,13 @@
                     .append(
                         $('<div class="start-screen">')
                             .append(
-                                $('<div class="start-text">').text("Hola, Soy el ToyotaBot. Si tiene alguna duda, estoy aquí para ayudarle!")
+                                $('<img class="start-img"/>').attr('src', './img/toyota-car.png')
+                            )
+                            .append(
+                                $('<img class="start-logo"/>').attr('src', './img/toyota-logo.png')
+                            )
+                            .append(
+                                $('<div class="start-text">').text("Hola, Soy el Purdy Bot. Si tiene alguna duda, estoy aquí para ayudarle!")
                             )
                             .append(
                                 $('<a class="start-btn">').text("Iniciar Chat")
@@ -206,34 +213,43 @@
             var container = $('<div class="message-outer bot">');
             var message = $('<div class="chat-message bot">');
 
-            var counter = 1;
+            var wave = $('<div id="wave">')
+                .append($('<span class="dot">'))
+                .append($('<span class="dot">'))
+                .append($('<span class="dot">'));
 
+            var counter = 0;
 
             if (val.messages !== null) {
 
-                var botImage = 'https://scontent.xx.fbcdn.net/v/t1.0-1/12036867_871948026214740_3114729672883288809_n.jpg?oh=a6def5588fff41c520613e9c4e2408c3&oe=59D76A1A';
+                var botImage = './img/toyota-logo.png';
                 var message = $('<div class="chat-message bot">').text(val.messages[0].text);
-                container
-                    .append(
-                        $('<div class="message-row">')
-                            .prepend(
-                                $('<div class="bot-icon">')
-                                    .append(
-                                        $('<img/>').attr('src', botImage)
-                                    )
-                            )
-                            .append(
-                                message
-                            )
-                    );
+
+                container.append(wave);
 
                 var printInterval = setInterval(function () {
 
                     var btnWidth;
 
+                    // container
+                    //     .append(
+                    //         $('<div class="message-row">')
+                    //             .prepend(
+                    //                 $('<div class="bot-icon">')
+                    //                     .append(
+                    //                         $('<img/>').attr('src', botImage)
+                    //                     )
+                    //             )
+                    //             .append(
+                    //                 message
+                    //             )
+                    //     );
+
                     if ((counter < val.messages.length) && (val.messages[counter].text !== null)) {
 
                         message = $('<div class="chat-message bot">').text(val.messages[counter].text);
+
+                        container.find($('#wave')).remove();
 
                         $('<div class="message-row">')
                             .prepend(
@@ -245,7 +261,9 @@
                             .append(
                                 message
                             )
-                            .appendTo(container)
+                            .appendTo(container);
+
+                        container.append(wave);
 
                         counter++;
                         btnWidth = message.outerWidth();
@@ -253,7 +271,8 @@
 
                     if ((counter === val.messages.length) && (val.buttons !== null)) {
 
-                        message.css('border-radius', '12px 12px 0 0');
+                        message.css('border-radius', '4px 4px 0 0');
+
 
                         val.buttons.forEach(function (entry) {
 
@@ -270,8 +289,8 @@
 
                         });
 
+                        container.find($('#wave')).remove();
                         clearInterval(printInterval);
-
                     }
 
                 }, 999);
