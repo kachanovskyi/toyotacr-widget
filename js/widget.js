@@ -78,7 +78,7 @@
         var $w = $(window);
 
         var launcherCont = {};
-        var chatTop = 440,
+        var chatTop = 480,
             chatBottom = 50,
             chatWidth = 333;
         launcherCont.bottom = 3;
@@ -172,10 +172,10 @@
                     .append(
                         $('<div class="start-screen">')
                             .append(
-                                $('<img class="start-img"/>').attr('src', './img/toyota-car.png')
+                                $('<img class="start-img"/>').attr('src', './img/toyota-yaris.jpg')
                             )
                             .append(
-                                $('<img class="start-logo"/>').attr('src', './img/toyota-logo.png')
+                                $('<img class="start-logo"/>').attr('src', './img/toyota-logo-red.png')
                             )
                             .append(
                                 $('<div class="start-text">').text("Hola, Soy el Purdy Bot. Si tiene alguna duda, estoy aquí para ayudarle!")
@@ -225,7 +225,10 @@
                 var botImage = './img/toyota-logo.png';
                 var message = $('<div class="chat-message bot">').text(val.messages[0].text);
 
-                container.append(wave);
+                container.append(
+                    $('<div class="message-row">')
+                        .append(wave)
+                );
 
                 var printInterval = setInterval(function () {
 
@@ -263,7 +266,11 @@
                             )
                             .appendTo(container);
 
-                        container.append(wave);
+                        container
+                            .append(
+                                $('<div class="message-row">')
+                                    .append(wave)
+                            );
 
                         counter++;
                         btnWidth = message.outerWidth();
@@ -293,7 +300,7 @@
                         clearInterval(printInterval);
                     }
 
-                }, 999);
+                }, 1333);
 
                 container.prependTo($('#chat-window').find('.message-container'));
 

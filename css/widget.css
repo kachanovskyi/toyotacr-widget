@@ -229,7 +229,7 @@
 #chat-window .start-screen .start-text {
     float: left;
     position: absolute;
-    bottom: 25%;
+    bottom: 23%;
     left: 50%;
     transform: translate(-50%, 50%);
     width: 100%;
@@ -295,6 +295,7 @@
 }
 #chat-window .message-container .bot-icon img {
     width: 100%;
+    border-radius: 100px;
 }
 
 #chat-window .message-container .chat-message.button {
@@ -500,12 +501,13 @@
 
 #wave {
     width: 100px;
-    height: 40px;
+    height: 20px;
+    padding-top: 12px;
 }
 div#wave .dot {
     display: inline-block;
-    width: 12px;
-    height: 12px;
+    width: 7px;
+    height: 7px;
     border-radius: 50%;
     margin-right: 3px;
     background: rgba(0, 0, 0, .5);
@@ -521,11 +523,11 @@ div#wave .dot:nth-child(3) {
 }
 
 @keyframes wave {
-    0%, 60%, 100% {
+    0%, 30%, 90% {
         transform: initial;
     }
-    30% {
-        transform: translateY(-15px);
+    15% {
+        transform: translateY(-6px);
     }
 }
 
