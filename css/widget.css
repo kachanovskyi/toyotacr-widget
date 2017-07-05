@@ -222,6 +222,7 @@
 
 #chat-window .start-screen .start-img {
     width: 100%;
+    margin-top: -16%;
 }
 #chat-window .start-screen .start-logo {
     width: 100px;
@@ -233,7 +234,7 @@
 #chat-window .start-screen .start-text {
     float: left;
     position: absolute;
-    bottom: 23%;
+    bottom: 30%;
     left: 50%;
     transform: translate(-50%, 50%);
     width: 100%;
@@ -275,9 +276,6 @@
     line-height: 100%;
     position: relative;
     border-radius: 4px;
-}
-#chat-window .message-container .chat-message.user {
-    border-radius: 100px;
 }
 
 #chat-window .message-container .message-row {
@@ -338,6 +336,7 @@
     background-color: #D0112B;
     color: rgba(256, 256, 256, .7);
     border-bottom: 1px solid rgba(0, 0, 0, .14);
+    z-index: 1;
 }
 
 #chat-window .message-container .chat-message.bot .arrow {
@@ -506,7 +505,7 @@
 #wave {
     width: 100px;
     height: 20px;
-    padding-top: 12px;
+    padding-top: 6px;
 }
 div#wave .dot {
     display: inline-block;
