@@ -206,6 +206,10 @@
 
         function setResponse(val) {
 
+            var sendBtn = $('.send-message');
+
+            sendBtn.addClass('disabled');
+
             if (sessionStorage.getItem("toyotaCRchatID") === null) {
                 sessionStorage.setItem("toyotaCRchatID", val.chatId.id);
             }
@@ -233,20 +237,6 @@
                 var printInterval = setInterval(function () {
 
                     var btnWidth;
-
-                    // container
-                    //     .append(
-                    //         $('<div class="message-row">')
-                    //             .prepend(
-                    //                 $('<div class="bot-icon">')
-                    //                     .append(
-                    //                         $('<img/>').attr('src', botImage)
-                    //                     )
-                    //             )
-                    //             .append(
-                    //                 message
-                    //             )
-                    //     );
 
                     if ((counter < val.messages.length) && (val.messages[counter].text !== null)) {
 
@@ -276,27 +266,30 @@
                         btnWidth = message.outerWidth();
                     }
 
-                    if ((counter === val.messages.length) && (val.buttons !== null)) {
+                    if (counter === val.messages.length) {
 
-                        message.css('border-radius', '4px 4px 0 0');
+                        if(val.buttons !== null) {
+                            message.css('border-radius', '4px 4px 0 0');
 
 
-                        val.buttons.forEach(function (entry) {
+                            val.buttons.forEach(function (entry) {
 
-                            container
-                                .append(
-                                    $('<div class="chat-message button">')
-                                        .text(entry.title)
-                                        .attr('payload', entry.payload)
-                                        .css('width', btnWidth)
-                                        .click(function () {
-                                            send("btn", $(this));
-                                        })
-                                );
+                                container
+                                    .append(
+                                        $('<div class="chat-message button">')
+                                            .text(entry.title)
+                                            .attr('payload', entry.payload)
+                                            .css('width', btnWidth)
+                                            .click(function () {
+                                                send("btn", $(this));
+                                            })
+                                    );
 
-                        });
+                            });
+                        }
 
                         container.find($('#wave')).remove();
+                        sendBtn.removeClass('disabled');
                         clearInterval(printInterval);
                     }
 
@@ -305,7 +298,6 @@
                 container.prependTo($('#chat-window').find('.message-container'));
 
             }
-
 
             chatScrollBottom();
         }
@@ -340,66 +332,67 @@
                 }
             });
 
-            console.log(data);
         }
 
         function send(param, elem) {
 
-            var text = $("#chatInput").val();
-            var data = {
-                chatId: {
-                    id: chatId
-                }
-            };
+            if( !$('.send-message').is('.disabled') ) {
 
-            if (param === "btn") {
-                text = elem.text();
-                data.button = {
-                    payload: elem.attr('payload')
-                }
-            } else {
-                data.message = {
-                    text: text
-                };
-            }
-
-            if (text.length && text !== " ") {
-
-                console.log("data to send: " + JSON.stringify(data));
-
-                $("#chatInput").val('');
-                $.ajax({
-                    type: "POST",
-                    // url: baseUrl + "query?v=20150910",
-                    url: './data/response.json',
-                    contentType: "application/json; charset=utf-8",
-                    dataType: "json",
-                    data: JSON.stringify(data),
-
-                    success: function (data) {
-                        setResponse(data);
-                    },
-                    error: function () {
-                        console.log("Internal Server Error");
+                var text = $("#chatInput").val();
+                var data = {
+                    chatId: {
+                        id: chatId
                     }
-                });
+                };
 
-                var message = $('<div class="chat-message user">');
+                if (param === "btn") {
+                    text = elem.text();
+                    data.button = {
+                        payload: elem.attr('payload')
+                    }
+                } else {
+                    data.message = {
+                        text: text
+                    };
+                }
 
-                $('<div class="message-outer user">')
-                    .prependTo($('#chat-window')
-                        .find('.message-container'));
+                if (text.length && text !== " ") {
 
-                message
-                    .text(text)
-                    .appendTo(
-                        $('#chat-window').find('.message-container').find('.message-outer.user')[0]
-                    );
+                    $("#chatInput").val('');
+                    $.ajax({
+                        type: "POST",
+                        // url: baseUrl + "query?v=20150910",
+                        url: './data/response2.json',
+                        contentType: "application/json; charset=utf-8",
+                        dataType: "json",
+                        data: JSON.stringify(data),
 
-            } else {
-                $("#chatInput").val('').focus();
+                        success: function (data) {
+                            setResponse(data);
+                        },
+                        error: function () {
+                            console.log("Internal Server Error");
+                        }
+                    });
+
+                    var message = $('<div class="chat-message user">');
+
+                    $('<div class="message-outer user">')
+                        .prependTo($('#chat-window')
+                            .find('.message-container'));
+
+                    message
+                        .text(text)
+                        .appendTo(
+                            $('#chat-window').find('.message-container').find('.message-outer.user')[0]
+                        );
+
+                } else {
+                    $("#chatInput").val('').focus();
+                }
+                chatScrollBottom();
+
             }
-            chatScrollBottom();
 
         }
 

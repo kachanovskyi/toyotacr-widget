@@ -160,6 +160,10 @@
     color: #D0112B;
 }
 
+#chat-window .chat-bottom .send-message.disabled {
+    color: #dadada;
+}
+
 /*#chat-window .chat-bottom .send-message i {*/
     /*font-size: 26px;*/
     /*position: absolute;*/
