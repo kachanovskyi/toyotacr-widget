@@ -314,11 +314,12 @@
             };
 
             $.ajax({
-                type: "POST",
+                // type: "POST",
+                type: "GET",            //mocked up version, should be post with data: !!!
                 url: './data/response.json',
                 contentType: "application/json; charset=utf-8",
                 dataType: "json",
-                data: JSON.stringify(data),
+                // data: JSON.stringify(data),
 
                 success: function (data) {
                     chatId = data.chatId.id;
@@ -360,12 +361,13 @@
 
                     $("#chatInput").val('');
                     $.ajax({
-                        type: "POST",
+                        // type: "POST",
+                        type: "GET",            //mocked up version, should be post with data: !!!
                         // url: baseUrl + "query?v=20150910",
                         url: './data/response2.json',
                         contentType: "application/json; charset=utf-8",
                         dataType: "json",
-                        data: JSON.stringify(data),
+                        // data: JSON.stringify(data),
 
                         success: function (data) {
                             setResponse(data);
