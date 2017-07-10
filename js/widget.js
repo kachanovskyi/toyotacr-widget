@@ -365,8 +365,8 @@
                     };
                 }
 
-                if (text.length && text !== " ") {
-
+                if (text.length && text.trim()) {
+                    
                     $("#chatInput").val('');
                     $.ajax({
                         // type: "POST",
