@@ -1,3 +1,5 @@
+//© All rights reserved. BotsCrew 2017
+
 (function () {
     //Load Stylesheet
     var root = './';
@@ -22,8 +24,34 @@
     var brandingLink = 'https://www.holaedna.com/edna-ai';
 
     setTimeout(function () {
-        (window.jQuery && init()) || loadScript("https://code.jquery.com/jquery-3.1.1.min.js", init);
+        (window.jQuery && init()) || loadScript("https://code.jquery.com/jquery-3.1.1.min.js", init);           //instead of init func should be isValidTime, so that widget would work only on certain hours
     }, 1000);
+    
+    function isValidTime() {
+
+        // var date = new Date(2017, 6, 17, 17, 30, 0);
+        var date = new Date();
+        var minutes = date.getMinutes();
+        var hour = date.getHours();
+        var dayOfWeek = date.getDay();
+
+        //Saturday - 6, Sunday - 0
+
+        if( (dayOfWeek === 0) || (dayOfWeek === 6) ) {
+
+            init();
+
+        } else if( (hour < 8) || (hour > 17) ) {
+
+            init();
+
+        } else if( (hour >= 17) && (minutes >= 30) ) {
+
+            init();
+
+        }
+
+    }
 
     function loadScript(url, callback) {
         var script = document.createElement("script");
@@ -366,7 +394,7 @@
                 }
 
                 if (text.length && text.trim()) {
-                    
+
                     $("#chatInput").val('');
                     $.ajax({
                         // type: "POST",

@@ -142,6 +142,8 @@
 #chat-window .chat-top .branding a:hover,
 #chat-window .chat-top .branding a:focus {
     color: #ffffff;
+    font-size: 12px;
+    text-decoration: underline !important;
 }
 
 #chat-window .chat-bottom .input-container {
