@@ -230,18 +230,12 @@
 
         });
 
-        function preventBodyScroll(e) {
-            e.preventDefault();
-        }
-
-        var body = document.getElementsByTagName("BODY")[0];
-
         function chatWindowShow() {
             $('#chat-window').show().addClass('expanded');
             $("#chatInput").val('');
 
             if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
-                body.addEventListener('touchmove', preventBodyScroll, false);
+                $('#widget-container').addClass('mobile');
             }
         }
 
@@ -250,7 +244,7 @@
             $('.chat-close').hide();
 
             if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
-                body.removeEventListener('touchmove', preventBodyScroll, false);
+                $('#widget-container').removeClass('mobile');
             }
         }
 

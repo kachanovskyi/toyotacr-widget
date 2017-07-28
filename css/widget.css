@@ -13,6 +13,11 @@
     font-family: "Source Sans Pro", sans-serif;
 }
 
+#widget-container.mobile {
+    top: 0;
+    left: 0;
+}
+
 #widget-container.left {
     right: auto;
     left: 0;
