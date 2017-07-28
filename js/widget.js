@@ -26,7 +26,7 @@
     setTimeout(function () {
         (window.jQuery && init()) || loadScript("https://code.jquery.com/jquery-3.1.1.min.js", init);           //instead of init func should be isValidTime, so that widget would work only on certain hours
     }, 1000);
-    
+
     function isValidTime() {
 
         // var date = new Date(2017, 6, 17, 17, 30, 0);
@@ -37,15 +37,15 @@
 
         //Saturday - 6, Sunday - 0
 
-        if( (dayOfWeek === 0) || (dayOfWeek === 6) ) {
+        if ((dayOfWeek === 0) || (dayOfWeek === 6)) {
 
             init();
 
-        } else if( (hour < 8) || (hour > 17) ) {
+        } else if ((hour < 8) || (hour > 17)) {
 
             init();
 
-        } else if( (hour >= 17) && (minutes >= 30) ) {
+        } else if ((hour >= 17) && (minutes >= 30)) {
 
             init();
 
@@ -124,12 +124,20 @@
 
         launcher.click(function () {
 
-            var chatHeight = (chatTop - $w.height()/9);
+            var chatHeight = (chatTop - $w.height() / 9);
 
             var messageContainer = $('<div class="message-container">')
                 .css('width', launcherCont.width)
                 .css('height', chatHeight)
-                .css('background-size', '100%');
+                .css('background-size', '100%')
+                .on('mousewheel DOMMouseScroll', function (e) {
+
+                    var e0 = e.originalEvent;
+                    var delta = e0.wheelDelta || -e0.detail;
+
+                    this.scrollTop += ( delta < 0 ? 1 : -1 ) * 30;
+                    e.preventDefault();
+                });
 
             if ($('#chat-window').length === 0) {
                 var chatWindow = $('<div id="chat-window">')
@@ -304,7 +312,7 @@
 
                     if (counter === val.messages.length) {
 
-                        if(val.buttons !== null) {
+                        if (val.buttons !== null) {
                             message.css('border-radius', '4px 4px 0 0');
 
 
@@ -373,7 +381,7 @@
 
         function send(param, elem) {
 
-            if( !$('.send-message').is('.disabled') ) {
+            if (!$('.send-message').is('.disabled')) {
 
                 var text = $("#chatInput").val();
                 var data = {
