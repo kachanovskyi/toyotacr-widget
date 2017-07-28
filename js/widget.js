@@ -2,8 +2,8 @@
 
 (function () {
     //Load Stylesheet
-    var root = './';
-    // var root = 'https://rawgit.com/kachanovskyi/toyotacr-widget/master/';
+    // var root = './';
+    var root = 'https://rawgit.com/kachanovskyi/toyotacr-widget/master/';
     // var accessToken = "afc2e32efdff44819a7cbc62e58009ca";
     // var baseUrl = "https://api.api.ai/v1/";
 
@@ -114,8 +114,8 @@
         launcherCont.width = 333;
         launcherCont.height = 20;
 
-        if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
-        // if ($w.width() < 500) {
+        // if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+        if ($w.width() < 500) {
             chatTop = $w.height();
             chatWidth = $w.width();
             launcherCont.width = chatWidth;
@@ -124,7 +124,7 @@
 
         launcher.click(function () {
 
-            var chatHeight = (chatTop);
+            var chatHeight = (chatTop - $w.height()/9);
 
             var messageContainer = $('<div class="message-container">')
                 .css('width', launcherCont.width)
@@ -196,8 +196,8 @@
                     )
                     .prependTo($('#chat-window').find('.message-container'));
 
-                if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
-                // if ($w.width() < 500) {
+                // if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+                if ($w.width() < 500) {
                     chatWindow.css('top', -chatHeight);
                 }
             }
