@@ -127,6 +127,7 @@
             var chatHeight = chatTop;
 
             var messageContainer = $('<div class="message-container">')
+                .attr('id', 'messageContainer')
                 .css('width', launcherCont.width)
                 .css('height', chatHeight)
                 .css('background-size', '100%');
@@ -226,6 +227,15 @@
             }
 
             chatWindowShow();
+
+            var fixed = document.getElementById('messageContainer');
+
+            fixed.addEventListener('touchmove', function(e) {
+
+                alert(1);
+                e.preventDefault();
+
+            }, false);
 
         });
 
