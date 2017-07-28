@@ -73,6 +73,7 @@
     box-sizing: border-box;
     border-radius: 5px;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    z-index: 4;
 }
 
 #chat-window .chat-top {
@@ -487,6 +488,7 @@
     -moz-box-shadow: 0 6px 6px 0 rgba(0,0,0,0.24);
     -webkit-box-shadow: 0 6px 6px 0 rgba(0,0,0,0.24);
     box-shadow: 0 6px 6px 0 rgba(0,0,0,0.24);
+    z-index: 3;
 }
 
 .widget-effect:before {
