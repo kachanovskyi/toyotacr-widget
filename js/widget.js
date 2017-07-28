@@ -208,10 +208,10 @@
                     .append(
                         $('<div class="start-screen">')
                             .append(
-                                $('<img class="start-img"/>').attr('src', './img/toyota-yaris.jpg')
+                                $('<img class="start-img"/>').attr('src', root + 'img/toyota-yaris.jpg')
                             )
                             .append(
-                                $('<img class="start-logo"/>').attr('src', './img/toyota-logo-red.png')
+                                $('<img class="start-logo"/>').attr('src', root + 'img/toyota-logo-red.png')
                             )
                             .append(
                                 $('<div class="start-text">').text("Hola, Soy el Purdy Bot. Si tiene alguna duda, estoy aquí para ayudarle!")
@@ -226,20 +226,6 @@
             }
 
             chatWindowShow();
-
-            $("body").delegate(".message-container","mouseover mouseout", function(e){
-                if(e.type === "mouseover"){
-                    $('body').bind('mousewheel',function(){
-                        alert(1);
-                        return false;
-                    });
-                }else if(e.type === "mouseout"){
-                    $('body').bind('mousewheel',function(){
-                        alert(2);
-                        return true;
-                    });
-                }
-            });
 
         });
 
@@ -276,7 +262,7 @@
 
             if (val.messages !== null) {
 
-                var botImage = './img/toyota-logo.png';
+                var botImage = root + 'img/toyota-logo.png';
                 var message = $('<div class="chat-message bot">').text(val.messages[0].text);
 
                 container.append(
@@ -366,7 +352,7 @@
             $.ajax({
                 // type: "POST",
                 type: "GET",            //mocked up version, should be post with data: !!!
-                url: './data/response.json',
+                url: root + 'data/response.json',
                 contentType: "application/json; charset=utf-8",
                 dataType: "json",
                 // data: JSON.stringify(data),
@@ -414,7 +400,7 @@
                         // type: "POST",
                         type: "GET",            //mocked up version, should be post with data: !!!
                         // url: baseUrl + "query?v=20150910",
-                        url: './data/response2.json',
+                        url: root + 'data/response2.json',
                         contentType: "application/json; charset=utf-8",
                         dataType: "json",
                         // data: JSON.stringify(data),

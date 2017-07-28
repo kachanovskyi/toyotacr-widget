@@ -60,8 +60,8 @@
       <file leaf-file-name="widget.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/js/widget.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="383">
-              <caret line="237" column="29" lean-forward="false" selection-start-line="237" selection-start-column="29" selection-end-line="237" selection-end-column="29" />
+            <state relative-caret-position="303">
+              <caret line="213" column="82" lean-forward="false" selection-start-line="213" selection-start-column="82" selection-end-line="213" selection-end-column="82" />
               <folding />
             </state>
           </provider>
@@ -89,7 +89,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>#anychat-container</find>
       <find>anychat-effect</find>
       <find>anychat</find>
       <find>input</find>
@@ -119,6 +118,7 @@
       <find>iOS</find>
       <find>send</find>
       <find>var botImage \= \'\.\/img\/toyota\-logo\.png\'\;\n</find>
+      <find>img</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -352,12 +352,12 @@
       <workItem from="1499770064856" duration="1185000" />
       <workItem from="1499861637603" duration="495000" />
       <workItem from="1499935169226" duration="5824000" />
-      <workItem from="1501249444028" duration="1736000" />
+      <workItem from="1501249444028" duration="1972000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="88880000" />
+    <option name="totallyTimeSpent" value="89116000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -745,8 +745,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/js/widget.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="383">
-          <caret line="237" column="29" lean-forward="false" selection-start-line="237" selection-start-column="29" selection-end-line="237" selection-end-column="29" />
+        <state relative-caret-position="303">
+          <caret line="213" column="82" lean-forward="false" selection-start-line="213" selection-start-column="82" selection-end-line="213" selection-end-column="82" />
           <folding />
         </state>
       </provider>
