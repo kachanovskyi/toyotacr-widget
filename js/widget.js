@@ -75,7 +75,7 @@
     }
 
     function init() {
-        alert('script updated');
+        alert('script updated2');
         var $ = window.jQuery;
 
         var chatId = sessionStorage.getItem("toyotaCRchatID");
@@ -236,8 +236,11 @@
             $("#chatInput").val('');
 
             if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
-                $('<div id="back-cover">')
-                    .appendTo('body');
+                $('#chat-window').on("scroll", function (e) {
+                    e.preventDefault();
+                    e.stopImmediatePropagation();
+                    return false;
+                })
             }
         }
 

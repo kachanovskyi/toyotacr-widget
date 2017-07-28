@@ -13,17 +13,6 @@
     font-family: "Source Sans Pro", sans-serif;
 }
 
-#back-cover {
-    background: red;
-    opacity: .5;
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    z-index: 222;
-}
-
 #widget-container.left {
     right: auto;
     left: 0;
