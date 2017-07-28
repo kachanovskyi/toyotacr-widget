@@ -228,25 +228,30 @@
 
             chatWindowShow();
 
-            var fixed = document.getElementById('messageContainer');
-
-            fixed.addEventListener('touchmove', function(e) {
-
-                e.preventDefault();
-
-            }, false);
-
         });
 
+        function preventBodyScroll(e) {
+            e.preventDefault();
+        }
+
+        var body = document.getElementsByTagName("BODY")[0];
 
         function chatWindowShow() {
             $('#chat-window').show().addClass('expanded');
             $("#chatInput").val('');
+
+            if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+                body.addEventListener('touchmove', preventBodyScroll, false);
+            }
         }
 
         function chatWindowClose() {
             $('#chat-window').hide().removeClass('expanded');
             $('.chat-close').hide();
+
+            if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+                body.removeEventListener('touchmove', preventBodyScroll, false);
+            }
         }
 
         function setResponse(val) {
