@@ -114,8 +114,8 @@
         launcherCont.width = 333;
         launcherCont.height = 20;
 
-        // if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
-        if ($w.width() < 500) {
+        if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+        // if ($w.width() < 500) {
             chatTop = $w.height();
             chatWidth = $w.width();
             launcherCont.width = chatWidth;
@@ -124,20 +124,12 @@
 
         launcher.click(function () {
 
-            var chatHeight = (chatTop - $w.height() / 9);
+            var chatHeight = chatTop;
 
             var messageContainer = $('<div class="message-container">')
                 .css('width', launcherCont.width)
                 .css('height', chatHeight)
-                .css('background-size', '100%')
-                .on('mousewheel DOMMouseScroll', function (e) {
-
-                    var e0 = e.originalEvent;
-                    var delta = e0.wheelDelta || -e0.detail;
-
-                    this.scrollTop += ( delta < 0 ? 1 : -1 ) * 30;
-                    e.preventDefault();
-                });
+                .css('background-size', '100%');
 
             if ($('#chat-window').length === 0) {
                 var chatWindow = $('<div id="chat-window">')
@@ -204,8 +196,8 @@
                     )
                     .prependTo($('#chat-window').find('.message-container'));
 
-                // if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
-                if ($w.width() < 500) {
+                if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+                // if ($w.width() < 500) {
                     chatWindow.css('top', -chatHeight);
                 }
             }
@@ -234,6 +226,20 @@
             }
 
             chatWindowShow();
+
+            $("body").delegate(".message-container","mouseover mouseout", function(e){
+                if(e.type === "mouseover"){
+                    $('body').bind('mousewheel',function(){
+                        alert(1);
+                        return false;
+                    });
+                }else if(e.type === "mouseout"){
+                    $('body').bind('mousewheel',function(){
+                        alert(2);
+                        return true;
+                    });
+                }
+            });
 
         });
 
