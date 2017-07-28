@@ -232,7 +232,6 @@
 
             fixed.addEventListener('touchmove', function(e) {
 
-                alert(1);
                 e.preventDefault();
 
             }, false);
