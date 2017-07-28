@@ -235,7 +235,8 @@
             $("#chatInput").val('');
 
             if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
-                $('#widget-container').addClass('mobile');
+                $('<div id="back-cover">')
+                    .appendTo('#widget-container');
             }
         }
 
@@ -244,7 +245,7 @@
             $('.chat-close').hide();
 
             if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
-                $('#widget-container').removeClass('mobile');
+                $('#back-cover').remove();
             }
         }
 
