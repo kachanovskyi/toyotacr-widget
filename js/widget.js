@@ -24,7 +24,7 @@
     var brandingLink = 'https://www.holaedna.com/edna-ai';
 
     setTimeout(function () {
-        (window.jQuery && init()) || loadScript("https://code.jquery.com/jquery-3.1.1.min.js", init);           //instead of init func should be isValidTime, so that widget would work only on certain hours
+        (window.jQuery && init()) || loadScript("http://code.jquery.com/jquery-1.12.4.min.js", init);           //instead of init func should be isValidTime, so that widget would work only on certain hours
     }, 1000);
 
     function isValidTime() {
@@ -114,8 +114,8 @@
         launcherCont.width = 333;
         launcherCont.height = 20;
 
-        if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
-        // if ($w.width() < 500) {
+        // if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+        if ($w.width() < 500) {
             chatTop = $w.height();
             chatWidth = $w.width();
             launcherCont.width = chatWidth;
@@ -197,15 +197,16 @@
                     )
                     .prependTo($('#chat-window').find('.message-container'));
 
-                if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
-                // if ($w.width() < 500) {
+                // if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+                if ($w.width() < 500) {
                     chatWindow.css('top', -chatHeight);
                 }
             }
 
-            if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+            // if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+            if ($w.width() < 500) {
                 loadScript("http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js", function () {
-                    $('#chat-window').on("tap",function(){
+                    $('#chat-window').on("tap",function() {
                         alert('body scrolled top');
                         $("html, body").animate({
                             scrollTop: 0
