@@ -114,8 +114,8 @@
         launcherCont.width = 333;
         launcherCont.height = 20;
 
-        // if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
-        if ($w.width() < 500) {
+        if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+        // if ($w.width() < 500) {
             chatTop = $w.height();
             chatWidth = $w.width();
             launcherCont.width = chatWidth;
@@ -197,17 +197,16 @@
                     )
                     .prependTo($('#chat-window').find('.message-container'));
 
-                // if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
-                if ($w.width() < 500) {
+                if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+                // if ($w.width() < 500) {
                     chatWindow.css('top', -chatHeight);
                 }
             }
 
-            // if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
-            if ($w.width() < 500) {
+            if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+            // if ($w.width() < 500) {
                 loadScript("https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js", function () {
                     $('#chat-window').on("touchstart",function() {
-                        alert('body scrolled top');
                         $("html, body").animate({
                             scrollTop: 0
                         }, 0);
@@ -376,7 +375,7 @@
             $.ajax({
                 // type: "POST",
                 type: "GET",            //mocked up version, should be post with data: !!!
-                url: root + 'data/response.json',
+                url: './data/response.json',
                 contentType: "application/json; charset=utf-8",
                 dataType: "json",
                 // data: JSON.stringify(data),
@@ -424,7 +423,7 @@
                         // type: "POST",
                         type: "GET",            //mocked up version, should be post with data: !!!
                         // url: baseUrl + "query?v=20150910",
-                        url: root + 'data/response2.json',
+                        url: './data/response2.json',
                         contentType: "application/json; charset=utf-8",
                         dataType: "json",
                         // data: JSON.stringify(data),
