@@ -114,8 +114,8 @@
         launcherCont.width = 333;
         launcherCont.height = 20;
 
-        if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
-            // if ($w.width() < 500) {
+        // if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+            if ($w.width() < 500) {
             chatTop = $w.height();
             chatWidth = $w.width();
             launcherCont.width = chatWidth;
@@ -197,17 +197,15 @@
                     )
                     .prependTo($('#chat-window').find('.message-container'));
 
-                if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
-                    // if ($w.width() < 500) {
+                // if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+                    if ($w.width() < 500) {
                     chatWindow.css('top', -chatHeight);
                 }
             }
 
-            if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
-                // if ($w.width() < 500) {
-                loadScript("https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js", function () {
-
-                });
+            // if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+                if ($w.width() < 500) {
+                loadScript("https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js");
             }
 
 
@@ -241,7 +239,8 @@
             $('#chat-window').show().addClass('expanded');
             $("#chatInput").val('');
 
-            if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+            // if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+                if ($w.width() < 500) {
                 alert('!!!');
                 $("html, body")
                     .animate({
