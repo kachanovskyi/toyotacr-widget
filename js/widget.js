@@ -191,14 +191,14 @@
 
                 $('<div class="message-outer bot">')
                     .css('visibility', 'hidden')
-                    .css('margin-bottom', '0')
+                    .css('margin-bottom', '10px')
                     .append(
                         $('<div class="chat-message bot purple">').text("I'm hidden:)")
                     )
                     .prependTo($('#chat-window').find('.message-container'));
 
-                // if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
-                if ($w.width() < 500) {
+                if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+                // if ($w.width() < 500) {
                     chatWindow.css('top', -chatHeight);
                 }
             }
@@ -234,8 +234,8 @@
             $('#chat-window').show().addClass('expanded no-border');
             $("#chatInput").val('');
 
-            // if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
-            if ($w.width() < 500) {
+            if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+            // if ($w.width() < 500) {
                 $('body')
                     .animate({
                         scrollTop: 0
@@ -249,8 +249,8 @@
             $('#chat-window').hide().removeClass('expanded no-border');
             $('.chat-close').hide();
 
-            // if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
-            if ($w.width() < 500) {
+            if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+            // if ($w.width() < 500) {
                 $("#overflowWrapper").contents().unwrap();
             }
         }
