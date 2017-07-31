@@ -236,7 +236,7 @@
 
             if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
             // if ($w.width() < 500) {
-                $('html, body')
+                $('body')
                     .animate({
                         scrollTop: 0
                     }, 0)
@@ -254,7 +254,7 @@
             if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
             // if ($w.width() < 500) {
                 $("#overflowWrapper").contents().unwrap();
-                $('html, body')
+                $('body')
                     .css('overflow-y', 'auto')
                     .css('max-height', 'none');
             }
