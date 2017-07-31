@@ -329,6 +329,7 @@
     text-align: center;
     border-radius: 0;
     top: -4px;
+    z-index: 0;
 }
 #chat-window .message-container .chat-message.button:first-child {
     border-radius: 4px 4px 0 0;
