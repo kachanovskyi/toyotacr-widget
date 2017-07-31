@@ -247,7 +247,7 @@
                         scrollTop: 0
                     }, 0)
                     .wrapInner('<div id="overflowWrapper" />');
-                $('#overflowWrapper').css('overflow-y', 'hidden');
+                $('#overflowWrapper').css('overflow-y', 'hidden').css('height', chatTop);
             }
         }
 
