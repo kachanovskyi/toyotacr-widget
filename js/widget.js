@@ -242,11 +242,11 @@
             // if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
                 if ($w.width() < 500) {
                 alert('!!!');
-                $("html, body")
+                $("html")
                     .animate({
                         scrollTop: 0
                     }, 0)
-                    .css('overflow-y', 'hidden');
+                    .addClass('overflow-y-hidden');
             }
         }
 
@@ -255,7 +255,7 @@
             $('.chat-close').hide();
 
             if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
-                $("html, body").css('overflow-y', 'auto');
+                $("html").removeClass('overflow-y-hidden');
             }
         }
 

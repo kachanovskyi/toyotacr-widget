@@ -5,6 +5,10 @@
     box-sizing: border-box;
 }
 
+.overflow-y-hidden {
+    overflow-y: hidden !important;
+}
+
 #widget-container {
     position: fixed;
     z-index: 10000;
