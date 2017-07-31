@@ -115,7 +115,7 @@
         launcherCont.height = 20;
 
         // if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
-            if ($w.width() < 500) {
+        if ($w.width() < 500) {
             chatTop = $w.height();
             chatWidth = $w.width();
             launcherCont.width = chatWidth;
@@ -198,13 +198,13 @@
                     .prependTo($('#chat-window').find('.message-container'));
 
                 // if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
-                    if ($w.width() < 500) {
+                if ($w.width() < 500) {
                     chatWindow.css('top', -chatHeight);
                 }
             }
 
             // if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
-                if ($w.width() < 500) {
+            if ($w.width() < 500) {
                 loadScript("https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js");
             }
 
@@ -240,13 +240,14 @@
             $("#chatInput").val('');
 
             // if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
-                if ($w.width() < 500) {
+            if ($w.width() < 500) {
                 alert('!!!');
-                $("html")
+                $('body')
                     .animate({
                         scrollTop: 0
                     }, 0)
-                    .addClass('overflow-y-hidden');
+                    .wrapInner('<div id="overflowWrapper" />');
+                $('#overflowWrapper').css('overflow-y', 'hidden');
             }
         }
 
@@ -254,8 +255,9 @@
             $('#chat-window').hide().removeClass('expanded');
             $('.chat-close').hide();
 
-            if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
-                $("html").removeClass('overflow-y-hidden');
+            // if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+            if ($w.width() < 500) {
+                $("#overflowWrapper").contents().unwrap();
             }
         }
 
