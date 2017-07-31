@@ -203,11 +203,6 @@
                 }
             }
 
-            // if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
-            if ($w.width() < 500) {
-                loadScript("https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js");
-            }
-
 
             if (sessionStorage.getItem("toyotaCRchatID") === null) {
                 messageContainer
