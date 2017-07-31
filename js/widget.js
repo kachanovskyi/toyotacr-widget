@@ -24,7 +24,7 @@
     var brandingLink = 'https://www.holaedna.com/edna-ai';
 
     setTimeout(function () {
-        (window.jQuery && init()) || loadScript("http://code.jquery.com/jquery-1.12.4.min.js", init);           //instead of init func should be isValidTime, so that widget would work only on certain hours
+        (window.jQuery && init()) || loadScript("https://code.jquery.com/jquery-1.12.4.min.js", init);           //instead of init func should be isValidTime, so that widget would work only on certain hours
     }, 1000);
 
     function isValidTime() {
