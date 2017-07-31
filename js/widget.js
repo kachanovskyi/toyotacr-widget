@@ -231,12 +231,11 @@
         });
 
         function chatWindowShow() {
-            $('#chat-window').show().addClass('expanded');
+            $('#chat-window').show().addClass('expanded no-border');
             $("#chatInput").val('');
 
             // if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
             if ($w.width() < 500) {
-                alert('!!!');
                 $('body')
                     .animate({
                         scrollTop: 0
@@ -247,7 +246,7 @@
         }
 
         function chatWindowClose() {
-            $('#chat-window').hide().removeClass('expanded');
+            $('#chat-window').hide().removeClass('expanded no-border');
             $('.chat-close').hide();
 
             // if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {

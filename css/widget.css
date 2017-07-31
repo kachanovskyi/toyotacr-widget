@@ -74,6 +74,10 @@
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
     z-index: 4;
 }
+#chat-window.no-border {
+    border: none;
+    border-radius: 0;
+}
 
 #chat-window .chat-top {
     -webkit-box-sizing: border-box;
