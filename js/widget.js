@@ -236,10 +236,12 @@
 
             if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
             // if ($w.width() < 500) {
-                $('body')
+                $('html, body')
                     .animate({
                         scrollTop: 0
                     }, 0)
+                    .css('overflow-y', 'hidden')
+                    .css('max-height', chatTop)
                     .wrapInner('<div id="overflowWrapper" />');
                 $('#overflowWrapper').css('overflow-y', 'hidden').css('height', chatTop);
             }
@@ -252,6 +254,9 @@
             if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
             // if ($w.width() < 500) {
                 $("#overflowWrapper").contents().unwrap();
+                $('html, body')
+                    .css('overflow-y', 'auto')
+                    .css('max-height', 'none');
             }
         }
 
