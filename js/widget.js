@@ -205,7 +205,7 @@
 
             // if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
             if ($w.width() < 500) {
-                loadScript("http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js", function () {
+                loadScript("https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js", function () {
                     $('#chat-window').on("tap",function() {
                         alert('body scrolled top');
                         $("html, body").animate({
