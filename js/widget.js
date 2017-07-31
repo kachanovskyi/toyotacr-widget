@@ -115,7 +115,7 @@
         launcherCont.height = 20;
 
         if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
-        // if ($w.width() < 500) {
+            // if ($w.width() < 500) {
             chatTop = $w.height();
             chatWidth = $w.width();
             launcherCont.width = chatWidth;
@@ -198,19 +198,15 @@
                     .prependTo($('#chat-window').find('.message-container'));
 
                 if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
-                // if ($w.width() < 500) {
+                    // if ($w.width() < 500) {
                     chatWindow.css('top', -chatHeight);
                 }
             }
 
             if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
-            // if ($w.width() < 500) {
+                // if ($w.width() < 500) {
                 loadScript("https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js", function () {
-                    $('#chat-window').on("touchstart",function() {
-                        $("html, body").animate({
-                            scrollTop: 0
-                        }, 0);
-                    });
+
                 });
             }
 
@@ -246,11 +242,11 @@
             $("#chatInput").val('');
 
             if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
-                $('#chat-window').on("scroll", function (e) {
-                    e.preventDefault();
-                    e.stopImmediatePropagation();
-                    return false;
-                })
+                $("html, body")
+                    .animate({
+                        scrollTop: 0
+                    }, 0)
+                    .css('overflow-y', 'hidden');
             }
         }
 
@@ -259,7 +255,7 @@
             $('.chat-close').hide();
 
             if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
-                $('#back-cover').remove();
+                $("html, body").css('overflow-y', 'auto');
             }
         }
 
