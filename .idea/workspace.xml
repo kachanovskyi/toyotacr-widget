@@ -2,6 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="281a4441-5d9a-4bb6-b8d2-820334c792cf" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/widget.css" afterPath="$PROJECT_DIR$/css/widget.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/widget.js" afterPath="$PROJECT_DIR$/js/widget.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -14,14 +17,13 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file leaf-file-name="widget.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/css/widget.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4725">
-              <caret line="315" column="20" lean-forward="false" selection-start-line="315" selection-start-column="20" selection-end-line="315" selection-end-column="20" />
+            <state relative-caret-position="562">
+              <caret line="230" column="21" lean-forward="false" selection-start-line="230" selection-start-column="21" selection-end-line="230" selection-end-column="21" />
               <folding />
             </state>
           </provider>
@@ -30,8 +32,8 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+            <state relative-caret-position="177">
+              <caret line="134" column="35" lean-forward="true" selection-start-line="134" selection-start-column="35" selection-end-line="134" selection-end-column="35" />
               <folding />
             </state>
           </provider>
@@ -60,8 +62,8 @@
       <file leaf-file-name="widget.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/js/widget.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="381">
-              <caret line="256" column="19" lean-forward="false" selection-start-line="256" selection-start-column="19" selection-end-line="256" selection-end-column="19" />
+            <state relative-caret-position="279">
+              <caret line="136" column="0" lean-forward="false" selection-start-line="136" selection-start-column="0" selection-end-line="136" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -89,8 +91,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>480</find>
-      <find>send-me</find>
       <find>toyotabiot</find>
       <find>message-outer</find>
       <find>message-outer bot</find>
@@ -119,6 +119,8 @@
       <find>message-row</find>
       <find>500</find>
       <find>chatTop</find>
+      <find>scrollba</find>
+      <find>.message-container</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -135,10 +137,10 @@
         <option value="$PROJECT_DIR$/test.html" />
         <option value="$PROJECT_DIR$/js/test.js" />
         <option value="$PROJECT_DIR$/test.js" />
-        <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/data/response.json" />
         <option value="$PROJECT_DIR$/data/response2.json" />
         <option value="$PROJECT_DIR$/data/readme.txt" />
+        <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/css/widget.css" />
         <option value="$PROJECT_DIR$/js/widget.js" />
       </list>
@@ -146,13 +148,22 @@
   </component>
   <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
   <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsFlowSettings">
+    <service-enabled>false</service-enabled>
+    <exe-path />
+    <annotation-enable>false</annotation-enable>
+    <other-services-enabled>false</other-services-enabled>
+    <auto-save>true</auto-save>
+  </component>
   <component name="JsGulpfileManager">
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="width" value="1440" />
-    <option name="height" value="900" />
+  <component name="ProjectFrameBounds" fullScreen="true">
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1382" />
+    <option name="height" value="744" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
@@ -169,64 +180,19 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="toyotacr-widget" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="toyotacr-widget" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="toyotacr-widget" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="toyotacr-widget" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="js" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="toyotacr-widget" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="toyotacr-widget" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="img" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="toyotacr-widget" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="toyotacr-widget" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="data" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
+          <expand>
+            <path>
+              <item name="toyotacr-widget" type="b2602c69:ProjectViewProjectNode" />
+              <item name="toyotacr-widget" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
         </subPane>
       </pane>
       <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -235,7 +201,6 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="HbShouldOpenHtmlAsHb" value="" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
-    <property name="FullScreen" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -258,6 +223,14 @@
     </option>
   </component>
   <component name="RunManager">
+    <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <gulpfile />
+      <tasks />
+      <arguments />
+      <envs />
+    </configuration>
     <configuration default="true" type="DartCommandLineRunConfigurationType" factoryName="Dart Command Line Application">
       <method />
     </configuration>
@@ -293,15 +266,6 @@
       <option name="cucumberJsArguments" value="" />
       <option name="executablePath" />
       <option name="filePath" />
-      <method />
-    </configuration>
-    <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
-      <node-interpreter>project</node-interpreter>
-      <node-options />
-      <gulpfile />
-      <tasks />
-      <arguments />
-      <envs />
       <method />
     </configuration>
     <configuration default="true" type="js.build_tools.npm" factoryName="npm">
@@ -355,12 +319,17 @@
       <workItem from="1501249444028" duration="4752000" />
       <workItem from="1501486730855" duration="7595000" />
       <workItem from="1501508693129" duration="349000" />
-      <workItem from="1501511644380" duration="1245000" />
+      <workItem from="1501511644380" duration="3090000" />
+      <workItem from="1501661976565" duration="1132000" />
+      <workItem from="1501852915375" duration="740000" />
+      <workItem from="1505307667231" duration="1109000" />
+      <workItem from="1505380824127" duration="498000" />
+      <workItem from="1506521390876" duration="2016000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="101085000" />
+    <option name="totallyTimeSpent" value="108425000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -369,12 +338,12 @@
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1564482" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -385,7 +354,7 @@
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="processedProjectFiles" value="true" />
+    <option name="version" value="1" />
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
@@ -708,10 +677,10 @@
     <entry file="file://$PROJECT_DIR$/js/jquery-ui.min.js" />
     <entry file="file://$PROJECT_DIR$/js/api.ai.js" />
     <entry file="file://$PROJECT_DIR$/test.js" />
-    <entry file="file://$PROJECT_DIR$/data/response.json">
+    <entry file="file://$PROJECT_DIR$/readme.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="26" lean-forward="false" selection-start-line="15" selection-start-column="26" selection-end-line="15" selection-end-column="26" />
+        <state relative-caret-position="60">
+          <caret line="4" column="103" lean-forward="false" selection-start-line="4" selection-start-column="103" selection-end-line="4" selection-end-column="103" />
           <folding />
         </state>
       </provider>
@@ -724,34 +693,34 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/readme.txt">
+    <entry file="file://$PROJECT_DIR$/data/response.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="103" lean-forward="false" selection-start-line="4" selection-start-column="103" selection-end-line="4" selection-end-column="103" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+        <state relative-caret-position="225">
+          <caret line="15" column="26" lean-forward="false" selection-start-line="15" selection-start-column="26" selection-end-line="15" selection-end-column="26" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/css/widget.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4725">
-          <caret line="315" column="20" lean-forward="false" selection-start-line="315" selection-start-column="20" selection-end-line="315" selection-end-column="20" />
+        <state relative-caret-position="562">
+          <caret line="230" column="21" lean-forward="false" selection-start-line="230" selection-start-column="21" selection-end-line="230" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="177">
+          <caret line="134" column="35" lean-forward="true" selection-start-line="134" selection-start-column="35" selection-end-line="134" selection-end-column="35" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/widget.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="381">
-          <caret line="256" column="19" lean-forward="false" selection-start-line="256" selection-start-column="19" selection-end-line="256" selection-end-column="19" />
+        <state relative-caret-position="279">
+          <caret line="136" column="0" lean-forward="false" selection-start-line="136" selection-start-column="0" selection-end-line="136" selection-end-column="0" />
           <folding />
         </state>
       </provider>

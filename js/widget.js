@@ -2,8 +2,8 @@
 
 (function () {
     //Load Stylesheet
-    // var root = './';
-    var root = 'https://rawgit.com/kachanovskyi/toyotacr-widget/master/';
+    var root = './';
+    // var root = 'https://rawgit.com/kachanovskyi/toyotacr-widget/master/';
     // var accessToken = "afc2e32efdff44819a7cbc62e58009ca";
     // var baseUrl = "https://api.api.ai/v1/";
 
@@ -132,6 +132,20 @@
                 .css('height', chatHeight)
                 .css('background-size', '100%');
 
+            $.fn.isolatedScroll = function () {
+                this.bind('mousewheel DOMMouseScroll', function (e) {
+                    var delta = e.wheelDelta || (e.originalEvent && e.originalEvent.wheelDelta) || -e.detail,
+                        bottomOverflow = this.scrollTop + $(this).outerHeight() - this.scrollHeight >= 0,
+                        topOverflow = this.scrollTop <= 0;
+
+                    if ((delta < 0 && bottomOverflow) || (delta > 0 && topOverflow)) {
+                        e.preventDefault();
+                    }
+                });
+                console.log(this);
+                return this;
+            };
+
             if ($('#chat-window').length === 0) {
                 var chatWindow = $('<div id="chat-window">')
                     .css('height', chatHeight)
@@ -227,6 +241,7 @@
             }
 
             chatWindowShow();
+            $('.message-container').isolatedScroll();
 
         });
 
@@ -234,7 +249,7 @@
             $('#chat-window').show().addClass('expanded no-border');
             $("#chatInput").val('');
 
-            if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+            if (/webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
             // if ($w.width() < 500) {
                 $('body')
                     .animate({
@@ -244,6 +259,11 @@
                     .css('max-height', chatTop)
                     .wrapInner('<div id="overflowWrapper" />');
                 $('#overflowWrapper').css('overflow-y', 'hidden').css('height', chatTop);
+            } else if (/Android/i.test(navigator.userAgent)) {
+                $('body')
+                    .scrollTop(0)
+                    .css('overflow', 'hidden')
+                    .css('height', '100vh');
             }
         }
 
@@ -251,12 +271,16 @@
             $('#chat-window').hide().removeClass('expanded no-border');
             $('.chat-close').hide();
 
-            if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+            if (/webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
             // if ($w.width() < 500) {
                 $("#overflowWrapper").contents().unwrap();
                 $('body')
                     .css('overflow-y', 'auto')
                     .css('max-height', 'none');
+            } else if (/Android/i.test(navigator.userAgent)) {
+                $('body')
+                    .css('overflow-y', 'auto')
+                    .css('height', 'auto');
             }
         }
 

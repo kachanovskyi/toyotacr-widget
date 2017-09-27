@@ -66,7 +66,7 @@
 }
 
 #chat-window {
-    overflow: hidden;
+    /*overflow: hidden;*/
     border: 1px solid rgba(0, 0, 0, .14);
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
@@ -132,8 +132,8 @@
 #chat-window .chat-bottom {
     position: absolute;
     height: 50px;
-    bottom: 0;
-    right: -1px;
+    bottom: 1px;
+    right: 0;
     margin: 0;
     border-top: 1px solid rgba(0, 0, 0, 0.139216);
     background-color: #ffffff;
@@ -156,7 +156,7 @@
 }
 
 #chat-window .chat-bottom .input-container {
-    border-bottom: 1px solid #dadada;
+    /*border-bottom: 1px solid #dadada;*/
 }
 
 #chat-window .chat-bottom .send-message {
@@ -216,7 +216,7 @@
 }
 
 #chat-window .message-container::-webkit-scrollbar {
-    display: none;
+    /*display: none;*/
 }
 
 #chat-window .message-container .start-screen {
@@ -228,7 +228,7 @@
     background-color: #FFFFFF;
     z-index: 1;
     text-align: center;
-    /*display: none;*/
+    overflow: hidden;
 }
 
 #chat-window .start-screen .start-img {
