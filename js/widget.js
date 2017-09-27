@@ -133,7 +133,7 @@
                 .css('background-size', '100%');
 
             $.fn.isolatedScroll = function () {
-                this.bind('mousewheel DOMMouseScroll', function (e) {
+                this.bind('mousewheel DOMMouseScroll ontouchmove', function (e) {
                     var delta = e.wheelDelta || (e.originalEvent && e.originalEvent.wheelDelta) || -e.detail,
                         bottomOverflow = this.scrollTop + $(this).outerHeight() - this.scrollHeight >= 0,
                         topOverflow = this.scrollTop <= 0;
@@ -142,7 +142,6 @@
                         e.preventDefault();
                     }
                 });
-                console.log(this);
                 return this;
             };
 
